@@ -1,0 +1,30 @@
+﻿@model WebApplication3.Models.Informacja
+
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+
+        <h3>
+            @Html.DisplayFor(model => model.Title)
+        </h3>
+
+
+
+
+
+        <p>
+            @Html.DisplayFor(model => model.Description)
+        </p>
+
+
+
+    </dl>
+</div>
+<p>
+    @if (User.Identity.IsAuthenticated)
+    { 
+    @Html.ActionLink("Edytuj", "Edit", new { id = Model.Id })
+    }
+    @Html.ActionLink("Wstecz", "Index")
+</p>
